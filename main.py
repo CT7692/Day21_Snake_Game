@@ -19,7 +19,7 @@ def play(my_snake, screen_obj):
         my_snake.move()
         gameplay(my_snake, screen_obj, snake_food, score)
         for i in my_snake.body[1:]:
-            if my_snake.body[0].position() == i.position():
+            if my_snake.body[0].distance(i) < TOO_CLOSE:
                 game_on = False
                 score.game_over()
         if (my_snake.body[0].xcor() > BOUNDARY1 or my_snake.body[0].xcor() < BOUNDARY2 or
