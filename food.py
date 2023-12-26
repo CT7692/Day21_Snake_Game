@@ -1,5 +1,6 @@
 from turtle import Turtle
-import random as r
+import secrets
+
 MAX = 270
 MIN = -270
 FOOD_MEASURE = 0.5
@@ -14,4 +15,4 @@ class Food(Turtle):
         self.speed("fastest")
         self.new_position()
     def new_position(self):
-        self.setpos(x=r.randint(MIN, MAX), y=r.randint(MIN, MAX))
+        self.setpos(x=secrets.SystemRandom().randint(MIN, MAX), y=secrets.SystemRandom().randint(MIN, MAX))
